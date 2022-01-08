@@ -65,12 +65,14 @@ public class FlightPriceTicketSystem2 {
 		System.out.println("|___________________________|___________________________|______________________________|" );
 		
 		//Display seat class arrangement
-		System.out.println("\n\n                                            GERAK AIRWAYS                                              ");
-		System.out.println("                                         PLEASE CHOOSE YOUR SEAT CLASS ARRANGEMENT                         ");
+		System.out.println("\n\n                                            GERAK AIRWAYS                                                ");
+		System.out.println("                                         PLEASE CHOOSE YOUR SEAT CLASS ARRANGEMENT                           ");
+		System.out.println("                                       NO ANY EXTRA CHARGES FOR THE FLIGHT CLASS SEAT                        ");
+		System.out.println("                             EVERY CLASS WILL GET SAME SERVICES AND COMFORTABLE ACCOMODATION                 ");
 		System.out.println("_____________________________________________________________________________________________________________");
-		System.out.println("|    INDIVIDUAL PACKAGE SEAT = F1       |         DUO PACKAGE SEAT = B3   |        FAMILIA PACKAGE SEAT = E2 |");
-		System.out.println("|          expensive                    |  high quality accomodations     |          basic flight            |");
-		System.out.println("|   the best quality accomodations      |    for business travellers      |      for family and friends      |");
+		System.out.println("|    INDIVIDUAL PACKAGE SEAT = F1       |       DUO PACKAGE SEAT = B3     |        FAMILIA PACKAGE SEAT = E2 |");
+		System.out.println("|          no food included             |       7kgs baggage included     |      included food + 7kgs baggage|");
+		System.out.println("|   getting your own privacy            |  special seat with your partner |     close for family and friends |");
 		System.out.println("|_______________________________________|_________________________________|__________________________________|");
 		System.out.println("|_____________________________________________SEAT CLASS ARRANGEMENT_________________________________________|");
 		System.out.println("|                                  /*             PILOT'S COCKPIT             */      WINGS - WINDOW         |");
@@ -135,9 +137,9 @@ public class FlightPriceTicketSystem2 {
 		final int SEAT_OF_IND = 12;
 		final int SEAT_OF_DUO=  28;
 		final int SEAT_OF_FAM =  55;
-        int indSeatTaken = 0; // next available first class seat 
-        int duoSeatTaken = 0; // next available economy seat 
-        int famSeatTaken = 0; //next available familiaSeatClass seat
+        int indSeatTaken = 0; // next available individual  class seat 
+        int duoSeatTaken = 0; // next available duo class seat 
+        int famSeatTaken = 0; //next available familia Class seat
         int section ;
         boolean isTerminate = true;
         System.out.println("Please book your ticket seat according to the class ");
@@ -150,7 +152,7 @@ public class FlightPriceTicketSystem2 {
                 System.out.println("Please type 2 for Duo Seat Class" );
                 System.out.println("Please type 3 for Familia Seat Class");
                 System.out.println("Please type 0 for Exit") ;
-                System.out.print( "Your Choice ( 1 / 2 / 3  / 0 ): " ); 
+                System.out.print( "Your Choice ( 1 / 2 / 3 / 0 ): " ); 
                 section = sc.nextInt();
                 if(section == 1 || section == 2 || section == 3 || section == 0) 
                 {
@@ -175,14 +177,14 @@ public class FlightPriceTicketSystem2 {
                 {
                 	if(duoSeatTaken == SEAT_OF_DUO && indSeatTaken == SEAT_OF_IND)
                 	{
-                		System.out.println("Sorry Individual Seat and Familia Seat are currently full");
-                		System.out.println("You can choose other seat Duo Seat that are still available");
+                		System.out.println("Sorry Duo Seat and Individual Class Seat are currently full");
+                		System.out.println("You can choose other seat Individual Seat that are still available");
 
                 	}
                 	else if(famSeatTaken == SEAT_OF_FAM && indSeatTaken == SEAT_OF_IND)
                 	{
-                		System.out.println("Sorry Individual Seat and Duo Seat are currently are currently full");
-                		System.out.println("You can choose  Familia seat that are still available");
+                		System.out.println("Sorry Familia Seat and Individual Seat are currently are currently full");
+                		System.out.println("You can choose  Duo seat that are still available");
                 		
                 	}
                 	else if (indSeatTaken == SEAT_OF_IND)
@@ -282,7 +284,7 @@ public class FlightPriceTicketSystem2 {
                }
         
                     
-                if (section == 0)
+                if (section == 0) // user exits
                 	isTerminate = false;
                     
         }   
@@ -324,9 +326,3 @@ public class FlightPriceTicketSystem2 {
         
 	}
 }
-      
-        
-	
-
-
-
